@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+    <!--================================ search News start ==================================================-->
+    <section class = "search my-5"> 
+      {% for i in search reversed %}
+      <div class="row">
+        <div class="col-md-5 p-3">
+          <img src="/media/{{i.photo}}" width = "600px" height = "300px" alt="">
+        </div>
+        <div class="col-md-6 p-3">
+          <h1>{{i.heading}}</h1>
+          <p>{{i.description | truncatewords:20 | safe}}</p>
+          <p>{{i.date}}</p>
+          <a href="" class="btn btn-danger">Read More</a>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+
+    <!--================================ search News end ==================================================-->
+
+{% endblock content %}
+ 

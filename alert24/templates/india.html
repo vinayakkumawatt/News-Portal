@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+    <!--================================ India News start ==================================================-->
+    <section class = "India my-5">
+      <h1 class="text-center bg-danger py-2 text-light">India News</h1>
+      {% for i in india reversed %}
+      <div class="row">
+        <div class="col-md-5 p-3">
+          <img src="/media/{{i.photo}}" width = "600px" height = "300px" alt="">
+        </div>
+        <div class="col-md-6 p-3">
+          <h1>{{i.heading}}</h1>
+          <p>{{i.description | truncatewords:20 | safe}}</p>
+          <p>{{i.date}}</p>
+          <a href="" class="btn btn-danger">Read More</a>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+
+    <!--================================ India News end ==================================================-->
+
+{% endblock content %}
+ 
